@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ml">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact | HI-TECH Rental Shop</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #0a0a0a;
+      color: #e0e0e0;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    header {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 1.2rem 5%;
+      background: rgba(0,0,0,0.9);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 100;
+    }
+
+    .logo {
+      font-size: 1.8rem;
+      font-weight: 700;
+      color: #ff0033;
+      text-shadow: 0 0 10px rgba(255,0,51,0.6);
+    }
+
+    nav a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 2rem;
+      font-weight: 600;
+    }
+
+    nav a:hover { color: #ff0033; }
+
+    /* TITLE */
+    .page-title {
+      margin-top: 110px;
+      text-align: center;
+      padding: 3.5rem 5% 2rem;
+    }
+
+    .page-title h1 {
+      font-size: 3.2rem;
+      color: #ff0033;
+      text-shadow: 0 0 20px rgba(255,0,51,0.6);
+    }
+
+    .page-title p {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      margin-top: 0.5rem;
+    }
+
+    /* CONTENT */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 5%;
+    }
+
+    .contact-box {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+      margin-bottom: 4rem;
+    }
+
+    .card {
+      background: rgba(30,30,30,0.85);
+      border: 1px solid #ff0033;
+      border-radius: 14px;
+      padding: 2.5rem;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(255,0,51,0.3);
+    }
+
+    .card h3 {
+      color: #ff0033;
+      margin-bottom: 1rem;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 1.2rem;
+      padding: 0.9rem 2.2rem;
+      background: #ff0033;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 50px;
+      font-weight: 600;
+      box-shadow: 0 0 20px rgba(255,0,51,0.6);
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 0 40px rgba(255,0,51,0.9);
+    }
+
+    /* MAP */
+    .map {
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 0 30px rgba(255,0,51,0.4);
+    }
+
+    /* FLOATING WHATSAPP */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      width: 65px;
+      height: 65px;
+      background-color: #25D366;
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg");
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: 36px;
+      border-radius: 50%;
+      box-shadow: 0 0 25px rgba(37,211,102,0.7);
+      z-index: 9999;
+      transition: 0.3s;
+    }
+
+    .whatsapp-float:hover {
+      transform: scale(1.15);
+      box-shadow: 0 0 40px rgba(37,211,102,1);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #000;
+      color: #aaa;
+      font-size: 0.95rem;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">HI-TECH Rental</div>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<div class="page-title">
+  <h1>Contact Us</h1>
+  <p>ഇപ്പോൾ തന്നെ വിളിക്കൂ അല്ലെങ്കിൽ WhatsApp ചെയ്യൂ</p>
+</div>
+
+<section>
+
+  <div class="contact-box">
+
+    <div class="card">
+      <h3>📞 Call Us</h3>
+      <p>Tool rental details അറിയാൻ</p>
+      <a href="tel:+919946680626" class="btn">Call Now</a>
+    </div>
+
+    <div class="card">
+      <h3>💬 WhatsApp</h3>
+      <p>Direct WhatsApp chat</p>
+      <a href="https://wa.me/919946680626?text=Hi%20HI-TECH%20Rental%20Shop,%20tool%20rental%20details%20ariyan%20vendi%20contact%20cheyyunnu."
+         class="btn" target="_blank">
+        Chat on WhatsApp
+      </a>
+    </div>
+
+    <div class="card">
+      <h3>📍 Location</h3>
+      <p>K.V. Kavu</p>
+      <p>Kannamvettikkavu, Malappuram</p>
+    </div>
+
+  </div>
+
+  <div class="map">
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.6867744083328!2d75.91160065470363!3d11.189047196491845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6455787f8f4f9%3A0xb7f52795e2f0e1e6!2sTECH%20TOOLS%20%26%20RENTALS!5e1!3m2!1sen!2sin!4v1768102524971!5m2!1sen!2sin"
+      width="100%"
+      height="420"
+      style="border:0;"
+      allowfullscreen
+      loading="lazy">
+    </iframe>
+  </div>
+  <div class="contact">
+    <h2>Contact Information</h2>
+    <p><strong>📍 Location:</strong> Kannamvettikavu, Malappuram</p>
+    <p><strong>📞 Phone:</strong> 9072 206 212 | 9744 206 212</p>
+    <p><strong>📧 Email:</strong> hashtellmobile@gmail.com</p>
+  </div>
+
+</section>
+
+<a class="whatsapp-float"
+   href="https://wa.me/919946680626"
+   target="_blank"
+   aria-label="Chat on WhatsApp"></a>
+
+<footer>
+  © 2026 HI-TECH Tools & Rentals | Kannamvettikavu
+</footer>
+
+</body>
+</html>
