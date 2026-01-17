@@ -3,73 +3,78 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Contact | HI-TECH Rental Shop</title>
-
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <title>Contact | HI-TECH Tools & Rentals</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;900&display=swap" rel="stylesheet"/>
+  <script src="https://unpkg.com/lucide@latest"></script>
 
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    :root {
+      --primary: #ff0033;
+      --bg-dark: #0a0a0a;
+      --bg-card: rgba(30,30,30,0.85);
+      --text-light: #e0e0e0;
+      --text-white: #ffffff;
+      --nav-bg: rgba(0,0,0,0.95);
+    }
 
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    
     body {
       font-family: 'Poppins', sans-serif;
-      background: #0a0a0a;
-      color: #e0e0e0;
+      background: var(--bg-dark);
+      color: var(--text-light);
       line-height: 1.7;
     }
 
-    /* HEADER */
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+
     header {
       position: fixed;
       top: 0;
       width: 100%;
-      padding: 1.2rem 5%;
-      background: rgba(0,0,0,0.9);
+      padding: 1rem 5%;
+      background: var(--nav-bg);
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 100;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
 
     .logo {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
       font-weight: 700;
-      color: #ff0033;
-      text-shadow: 0 0 10px rgba(255,0,51,0.6);
+      color: var(--primary);
+      text-transform: uppercase;
+      /* Shadow removed */
     }
 
-    nav a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 2rem;
-      font-weight: 600;
-    }
+    nav ul { display: flex; gap: 2rem; }
+    nav a { color: var(--text-white); font-weight: 600; transition: color 0.3s; }
+    nav a:hover, nav a.active { color: var(--primary); }
 
-    nav a:hover { color: #ff0033; }
+    .menu-toggle { display: none; color: white; cursor: pointer; }
 
-    /* TITLE */
+    /* CONTENT */
     .page-title {
-      margin-top: 110px;
+      margin-top: 100px;
       text-align: center;
-      padding: 3.5rem 5% 2rem;
+      padding: 2rem 5%;
     }
 
     .page-title h1 {
-      font-size: 3.2rem;
-      color: #ff0033;
-      text-shadow: 0 0 20px rgba(255,0,51,0.6);
+      font-size: 2.8rem;
+      color: var(--primary);
+      /* Shadow removed */
     }
+    
+    .page-title p { color: #ccc; }
 
-    .page-title p {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      margin-top: 0.5rem;
-    }
-
-    /* CONTENT */
     section {
+      padding: 2rem 5% 5rem;
       max-width: 1100px;
-      margin: auto;
-      padding: 4rem 5%;
+      margin: 0 auto;
     }
 
     .contact-box {
@@ -80,147 +85,170 @@
     }
 
     .card {
-      background: rgba(30,30,30,0.85);
-      border: 1px solid #ff0033;
+      background: var(--bg-card);
+      border: 1px solid var(--primary);
       border-radius: 14px;
       padding: 2.5rem;
       text-align: center;
-      box-shadow: 0 0 25px rgba(255,0,51,0.3);
+      /* Text shadow removed */
     }
 
     .card h3 {
-      color: #ff0033;
+      color: var(--primary);
       margin-bottom: 1rem;
+      /* Shadow removed */
     }
 
     .btn {
       display: inline-block;
       margin-top: 1.2rem;
       padding: 0.9rem 2.2rem;
-      background: #ff0033;
+      background: var(--primary);
       color: #fff;
-      text-decoration: none;
       border-radius: 50px;
       font-weight: 600;
-      box-shadow: 0 0 20px rgba(255,0,51,0.6);
       transition: 0.3s;
     }
 
     .btn:hover {
-      transform: scale(1.1);
-      box-shadow: 0 0 40px rgba(255,0,51,0.9);
+      transform: translateY(-3px);
     }
 
-    /* MAP */
     .map {
       border-radius: 16px;
       overflow: hidden;
-      box-shadow: 0 0 30px rgba(255,0,51,0.4);
+      border: 1px solid #333;
     }
 
-    /* FLOATING WHATSAPP */
-    .whatsapp-float {
+    /* FLOATING BUTTONS */
+    .whatsapp-float, .call-float {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      width: 65px;
-      height: 65px;
-      background-color: #25D366;
-      background-image: url("https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg");
-      background-repeat: no-repeat;
-      background-position: center;
-      background-size: 36px;
+      right: 20px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      box-shadow: 0 0 25px rgba(37,211,102,0.7);
-      z-index: 9999;
-      transition: 0.3s;
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: transform 0.3s;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
     }
-
-    .whatsapp-float:hover {
-      transform: scale(1.15);
-      box-shadow: 0 0 40px rgba(37,211,102,1);
-    }
+    
+    .whatsapp-float { bottom: 100px; background-color: #25D366; }
+    .call-float { bottom: 25px; background-color: var(--primary); }
+    .whatsapp-float:hover, .call-float:hover { transform: scale(1.1); }
+    .whatsapp-float svg { width: 35px; height: 35px; fill: white; }
+    .call-float svg { width: 30px; height: 30px; color: white; }
 
     footer {
+      background: #000;
       text-align: center;
       padding: 2rem;
-      background: #000;
-      color: #aaa;
-      font-size: 0.95rem;
+      color: #666;
+      font-size: 0.9rem;
+      border-top: 1px solid #222;
+      margin-top: auto;
+    }
+    
+    body { display: flex; flex-direction: column; min-height: 100vh; }
+
+    @media (max-width: 768px) {
+      .menu-toggle { display: block; }
+      nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: var(--nav-bg);
+        border-top: 1px solid #333;
+        transform: scaleY(0);
+        transform-origin: top;
+        transition: transform 0.3s ease;
+      }
+      nav.active { transform: scaleY(1); }
+      nav ul { flex-direction: column; padding: 2rem; gap: 1.5rem; align-items: center; }
+      .whatsapp-float, .call-float { width: 50px; height: 50px; right: 15px; }
+      .whatsapp-float { bottom: 85px; }
     }
   </style>
 </head>
-
 <body>
 
-<header>
-  <div class="logo">HI-TECH Rental</div>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="contact.html">Contact</a>
-  </nav>
-</header>
-
-<div class="page-title">
-  <h1>Contact Us</h1>
-  <p>ഇപ്പോൾ തന്നെ വിളിക്കൂ അല്ലെങ്കിൽ WhatsApp ചെയ്യൂ</p>
-</div>
-
-<section>
-
-  <div class="contact-box">
-
-    <div class="card">
-      <h3>📞 Call Us</h3>
-      <p>Tool rental details അറിയാൻ</p>
-      <a href="tel:+9072 206 212" class="btn">Call Now</a>
+  <header>
+    <div class="logo">HI-TECH RENTAL</div>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <i data-lucide="menu"></i>
     </div>
+    <nav id="navbar">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
 
-    <div class="card">
-      <h3>💬 WhatsApp</h3>
-      <p>Direct WhatsApp chat</p>
-      <a href="https://wa.me/9072 206 212?text=Hi%20HI-TECH%20Rental%20Shop,%20tool%20rental%20details%20ariyan%20vendi%20contact%20cheyyunnu."
-         class="btn" target="_blank">
-        Chat on WhatsApp
-      </a>
-    </div>
-
-    <div class="card">
-      <h3>📍 Location</h3>
-      <p>K.V. Kavu</p>
-      <p>Kannamvettikkavu, Malappuram</p>
-    </div>
-
+  <div class="page-title">
+    <h1>Contact Us</h1>
+    <p>ഇപ്പോൾ തന്നെ വിളിക്കൂ അല്ലെങ്കിൽ WhatsApp ചെയ്യൂ</p>
   </div>
 
-  <div class="map">
-    <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.6867744083328!2d75.91160065470363!3d11.189047196491845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6455787f8f4f9%3A0xb7f52795e2f0e1e6!2sTECH%20TOOLS%20%26%20RENTALS!5e1!3m2!1sen!2sin!4v1768102524971!5m2!1sen!2sin"
-      width="100%"
-      height="420"
-      style="border:0;"
-      allowfullscreen
-      loading="lazy">
-    </iframe>
-  </div>
-  <div class="contact">
-    <h2>Contact Information</h2>
-    <p><strong>📍 Location:</strong> Kannamvettikavu, Malappuram</p>
-    <p><strong>📞 Phone:</strong> 9072 206 212 | 9744 206 212</p>
-    <p><strong>📧 Email:</strong> hashtellmobile@gmail.com</p>
-  </div>
+  <section>
 
-</section>
+    <div class="contact-box">
+      <div class="card">
+        <h3>📞 Call Us</h3>
+        <p>Tool rental details അറിയാൻ</p>
+        <a href="tel:+919072206212" class="btn">Call Now</a>
+      </div>
 
-<a class="whatsapp-float"
-   href="https://wa.me/919946680626"
-   target="_blank"
-   aria-label="Chat on WhatsApp"></a>
+      <div class="card">
+        <h3>💬 WhatsApp</h3>
+        <p>Direct WhatsApp chat</p>
+        <a href="https://wa.me/919946680626?text=Hi%20HI-TECH%20Rental%20Shop"
+           class="btn" target="_blank">
+          Chat on WhatsApp
+        </a>
+      </div>
 
-<footer>
-  © 2026 HI-TECH Tools & Rentals | Kannamvettikavu
-</footer>
+      <div class="card">
+        <h3>📍 Location</h3>
+        <p>K.V. Kavu</p>
+        <p>Kannamvettikkavu, Malappuram</p>
+      </div>
+    </div>
 
+    <div class="map">
+      <iframe
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d816.6867744083328!2d75.91160065470363!3d11.189047196491845!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba6455787f8f4f9%3A0xb7f52795e2f0e1e6!2sTECH%20TOOLS%20%26%20RENTALS!5e1!3m2!1sen!2sin!4v1768102524971!5m2!1sen!2sin"
+        width="100%"
+        height="420"
+        style="border:0;"
+        allowfullscreen
+        loading="lazy">
+      </iframe>
+    </div>
+
+  </section>
+
+  <!-- Floating Buttons -->
+  <a href="https://wa.me/919946680626?text=Hi%20HI-TECH%20Rental%20Shop" class="whatsapp-float" target="_blank">
+    <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.304-5.235c0-5.443 4.429-9.876 9.88-9.876 2.64 0 5.122 1.03 6.988 2.896a9.825 9.825 0 012.893 6.994c-.003 5.444-4.432 9.853-9.886 9.853" fill="white"/></svg>
+  </a>
+  <a href="tel:+919072206212" class="call-float">
+    <i data-lucide="phone" color="white"></i>
+  </a>
+
+  <footer>
+    <p>© 2026 HI-TECH Tools & Rentals | Kannamvettikavu</p>
+  </footer>
+
+  <script>
+    lucide.createIcons();
+    function toggleMenu() {
+      document.getElementById('navbar').classList.toggle('active');
+    }
+  </script>
 </body>
 </html>
